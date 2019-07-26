@@ -1,0 +1,111 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Zyanken_Game
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("おい、ジャンケンしろよ。\n");
+            Console.WriteLine("ジャンケンしてあげますか？");
+
+            while (true)    // continue 文が実行されると条件式の判定から処理をやり直す。
+            {
+                Console.WriteLine("ジャンケンする：Yを入力");
+                Console.WriteLine("もう帰る：Nを入力");
+
+                var yesno = Console.ReadLine();
+
+                if (yesno == "y" || yesno == "Y")
+                {
+                    Console.WriteLine("闇のゲームの始まりだ\n");
+                    game_start();
+                }
+                else if (yesno == "n" || yesno == "N")
+                {
+                    Console.WriteLine("帰りたいのを無理に引き留めるのは気が引けるから帰っていいよ\n");
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Console.WriteLine("YESかNOか聞かれたならYESかNOで答えなさい\n");
+                }
+            }
+        }
+
+        static void game_start()
+        {
+            Console.WriteLine("運命の選択");
+            Console.WriteLine("0:グー");
+            Console.WriteLine("1:チョキ");
+            Console.WriteLine("2:パー");
+
+            int hand = int.Parse(Console.ReadLine());
+
+            check_hand(ref hand);
+
+            Battle(ref hand);
+
+        }
+
+        static void check_hand(ref int hand)
+        {
+            while (true)    // continue 文が実行されると条件式の判定から処理をやり直す。
+            {
+                if (hand == (0) || hand == (1) || hand == (2))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("運命は三択だぜ");
+                    Console.WriteLine("0:グー");
+                    Console.WriteLine("1:チョキ");
+                    Console.WriteLine("2:パー");
+
+                    hand = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+
+            static void Battle(ref int hand)
+        {
+            Random rnd = new System.Random();    // インスタンスを生成
+            int intResult = rnd.Next(3);         // 0～2の乱数を取得
+            int cpu = intResult;                 // 取得した乱数をcpuの手に反映
+
+            string strhand = hand.ToString();
+            string strcpu = cpu.ToString();
+
+            //今はここに文字列での手を反映させようとしています
+            Console.WriteLine("自分の出した手：" + strhand);
+            Console.WriteLine("相手の出した手：" + strcpu);
+
+            int n = (hand - cpu +3) & 3;
+
+            if (n == 2)
+            {
+                Console.WriteLine("お前の勝ちだぜ!!\n");
+            }
+            else if (n == 1)
+            {
+                Console.WriteLine("お前の負け!!敗北!!人生の敗北者!!人生何もいいことがなかった!!死!!!\n");
+            }
+            else
+            {
+                Console.WriteLine("あいこだぜ!!");
+                Console.WriteLine("あいこが出たのでもう一度↓\n");
+                //じゃんけんを開始するメソッドを呼び出す。
+                game_start();
+            }
+
+        }
+
+    }
+
+}
+
