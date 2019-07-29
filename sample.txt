@@ -8,9 +8,10 @@ namespace Zyanken_Game
 {
     class Program
     {
+        //手の参照用にフィールドを用意
         static string[] Otete = { "グー", "チョキ", "パー" };
 
-        static void Main(string[] args)
+        static void Main(string[] Args)
         {
             Console.WriteLine("おい、ジャンケンしろよ。\n");
             Console.WriteLine("ジャンケンしてあげますか？");
@@ -24,22 +25,22 @@ namespace Zyanken_Game
                 Console.WriteLine("ジャンケンする：Yを入力");
                 Console.WriteLine("もう帰る：Nを入力");
 
-                string yesno = Console.ReadLine();
+                string y_n = Console.ReadLine();
 
                 //入力が適正であるかのチェックを行う
-                if (yesno == "y" || yesno == "Y")
+                if (y_n == "y" || y_n == "Y")
                 {
                     Console.WriteLine("\n闇のゲームの始まりだ\n");
                     GameStart();
                 }
-                else if (yesno == "n" || yesno == "N")
+                else if (y_n == "n" || y_n == "N")
                 {
                     Console.WriteLine("\n帰りたいのを無理に引き留めるのは気が引けるから帰っていいよ\n");
-                    Environment.Exit(0);    //無限ループするジャンケンの輪廻から抜け出す
+                    Environment.Exit(0);    //無限ループから抜け出す
                 }
                 else
                 {
-                    Console.WriteLine("\nYESかNOか聞かれたならYESかNOで答えろよ\n");
+                    Console.WriteLine("\nYESかNOか聞かれたならYESかNOで答えろよ\n");　//入力が適正でない場合入力に戻る
                 }
             }
         }
@@ -52,7 +53,7 @@ namespace Zyanken_Game
             Console.WriteLine("1:チョキ");
             Console.WriteLine("2:パー");
 
-            try
+            try//try-catchで文字列や膨大な桁数の入力に対応
             {
                 int hand = int.Parse(Console.ReadLine());
                 CheckHand(ref hand); //CheckHandメソッドへ行き、必要ならhandの値を置き換える
@@ -62,14 +63,12 @@ namespace Zyanken_Game
             {
                 Console.Write("\n選べる運命はこの三択だぜ\n");
                 GameStart();
-
             }
             catch (OverflowException)
             {
                 Console.Write("\n選べる運命はこの三択だぜ\n");
                 GameStart();
             }
-
         }
 
         static void CheckHand(ref int hand)
@@ -90,8 +89,6 @@ namespace Zyanken_Game
 
                     hand = int.Parse(Console.ReadLine());
                 }
-
-
             }
         }
 
@@ -105,8 +102,7 @@ namespace Zyanken_Game
             string strHand = hand.ToString();
             string strCpu = cpu.ToString();
 
-
-            //今はここに文字列としての手を反映させようとしています
+            //互いの選んだ手を開示
             Console.WriteLine("\n自分の出した手：" + Otete.GetValue(int.Parse(strHand)));
             Console.WriteLine("相手の出した手：" + Otete.GetValue(int.Parse(strCpu)));
 
@@ -131,10 +127,6 @@ namespace Zyanken_Game
                 //あいこなので手の選択へ戻る
                 GameStart();
             }
-
         }
-
-
     }
-
 }
