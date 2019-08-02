@@ -19,13 +19,13 @@ namespace Zyanken_Taninzuu
                 Console.WriteLine("ジャンケンする：Yを入力");
                 Console.WriteLine("もう帰る：Nを入力");
 
-                string y_n = Console.ReadLine();
+                string yn = Console.ReadLine();
 
-                if (y_n == "y" || y_n == "Y" || y_n == "yes" || y_n == "YES")
+                if (yn == "y" || yn == "Y" || yn == "yes" || yn == "YES")
                 {
-                    Definition_input();
+                    Definitioninput();
                 }
-                else if (y_n == "n" || y_n == "N" || y_n == "no" || y_n == "NO")
+                else if (yn == "n" || yn == "N" || yn == "no" || yn == "NO")
                 {
                     Console.WriteLine("\n帰りたいのを無理に引き留めるのは気が引けるから帰っていいよ\n");
                     Environment.Exit(0);   
@@ -36,216 +36,216 @@ namespace Zyanken_Taninzuu
                 }
             }
         }
-        static void Array_Registration(ref int friendNumber, int enemyNumber, int timesNumber)
+        static void ArrayRegistration(ref int FriendNumber, int EnemyNumber, int TimesNumber)
         {
             //各プレイヤーの手を格納する配列。
-            int[] ifriend = new int[friendNumber];
-            int[] ienemy = new int[enemyNumber];
+            int[] IntFriend = new int[FriendNumber];
+            int[] IntEnemy = new int[EnemyNumber];
 
             //N番目のプレイヤーが出した手をグー、チョキ、パーとして文字列で格納する配列。
-            string[] sfriend = new string[friendNumber];
-            string[] senemy = new string[enemyNumber];
+            string[] StrFriend = new string[FriendNumber];
+            string[] StrEnemy = new string[EnemyNumber];
 
             //各プレイヤーの勝敗数を格納する配列。
-            int[] friendwincount = new int[friendNumber];
-            int[] enemywincount = new int[enemyNumber];
-            int[] friendlosecount = new int[friendNumber];
-            int[] enemylosecount = new int[enemyNumber];
+            int[] FriendWinCount = new int[FriendNumber];
+            int[] Enemywincount = new int[EnemyNumber];
+            int[] FriendLoseCount = new int[FriendNumber];
+            int[] EnemyLoseCount = new int[EnemyNumber];
 
             //各プレイヤーの勝率を格納する配列。
-            float[] friendwinpercent = new float[friendNumber];
-            float[] enemywinpercent = new float[enemyNumber];
+            float[] FriendWinPercent = new float[FriendNumber];
+            float[] EnemyWinPercent = new float[EnemyNumber];
 
             //各プレイヤーとCPUの出した手の数値を格納する配列。
-            int[] iallhand = new int[friendNumber + enemyNumber];
-            string[] sallhand = new string[friendNumber + enemyNumber];
+            int[] IntAllHand = new int[FriendNumber + EnemyNumber];
+            string[] StrAllHand = new string[FriendNumber + EnemyNumber];
 
-            //timesNumberで指定したkaisuになるまでジャンケンを行う
-            for (int kaisu = 0; kaisu < timesNumber; kaisu++)
+            //TimesNumberで指定したKaisuになるまでジャンケンを行う
+            for (int Kaisu = 0; Kaisu < TimesNumber; Kaisu++)
             {
-                /*if (kaisu > 0) //2回戦以降ならば変数を初期化
+                /*if (Kaisu > 0) //2回戦以降ならば変数を初期化
                 {
-                    for (int x = 0; x < friendNumber; x++)
+                    for (int x = 0; x < FriendNumber; x++)
                     {
-                        ifriend[x] = 0;
-                        sfriend[x] = "";
-                        ienemy[x] = 0;
-                        senemy[x] = "";
+                        IntFriend[x] = 0;
+                        StrFriend[x] = "";
+                        IntEnemy[x] = 0;
+                        StrEnemy[x] = "";
                     }
                 }*/
 
-                Console.WriteLine((kaisu + 1) + "回戦\n");
-                for (int i = 0; i < friendNumber; i++)      //仲間全員の手が揃うまで選択
+                Console.WriteLine((Kaisu + 1) + "回戦\n");
+                for (int i = 0; i < FriendNumber; i++)      //仲間全員の手が揃うまで選択
                 {
                     Console.WriteLine("\n仲間" + (i + 1) + "の手を選択し、以下の数字で入力");
                     Console.WriteLine("1:グー　2:チョキ　3:パー");
-                    ifriend[i] = Getint(ref i); //プレイヤーの入力した数値を格納する変数
-                    sfriend[i] = convert(ifriend[i]); //数値をグー、チョキ、パーの文字列に変換
-                    iallhand[i] = ifriend[i];
-                    sallhand[i] = convert(ifriend[i]);
+                    IntFriend[i] = GetInt(ref i); //プレイヤーの入力した数値を格納する変数
+                    StrFriend[i] = Convert(IntFriend[i]); //数値をグー、チョキ、パーの文字列に変換
+                    IntAllHand[i] = IntFriend[i];
+                    StrAllHand[i] = Convert(IntFriend[i]);
                 }
-                Random enemyRandom = new System.Random();
-                for (int i = 0; i < enemyNumber; i++)
+                Random EnemyHand = new System.Random();
+                for (int i = 0; i < EnemyNumber; i++)
                 {
-                    ienemy[i] = enemyRandom.Next(1, 4); //1～３の乱数を取得し敵の手とする。
-                    senemy[i] = convert(ienemy[i]); //数値をグー、チョキ、パーの文字列に変換
-                    iallhand[i + friendNumber] = ienemy[i];
-                    sallhand[i + friendNumber] = convert(ienemy[i]);
+                    IntEnemy[i] = EnemyHand.Next(1, 4); //1～３の乱数を取得し敵の手とする。
+                    StrEnemy[i] = Convert(IntEnemy[i]); //数値をグー、チョキ、パーの文字列に変換
+                    IntAllHand[i + FriendNumber] = IntEnemy[i];
+                    StrAllHand[i + FriendNumber] = Convert(IntEnemy[i]);
                 }
                 //それぞれのプレイヤーが出した手を表示
-                for (int i = 0; i < friendNumber; i++)
+                for (int i = 0; i < FriendNumber; i++)
                 {
-                    Console.Write("\n仲間" + (i + 1) + ":" + sallhand[i] + " ");
+                    Console.Write("\n仲間" + (i + 1) + ":" + StrAllHand[i] + " ");
                 }
-                for (int i = friendNumber; i < friendNumber + enemyNumber; i++)
+                for (int i = FriendNumber; i < FriendNumber + EnemyNumber; i++)
                 {
-                    Console.Write("\n　敵" + (i - friendNumber + 1) + ":" + sallhand[i] + " ");
+                    Console.Write("\n　敵" + (i - FriendNumber + 1) + ":" + StrAllHand[i] + " ");
                 }
 
-                int rockcount = 0; //グーを出した人をカウントする変数
-                int scissorscount = 0; //チョキを出した人をカウントする変数
-                int papercount = 0; //パーを出した人をカウントする変数
+                int RockCount = 0; //グーを出した人をカウントする変数
+                int ScissorsCount = 0; //チョキを出した人をカウントする変数
+                int PaperCount = 0; //パーを出した人をカウントする変数
 
-                for (int i = 0; i < iallhand.Length; i++)
+                for (int i = 0; i < IntAllHand.Length; i++)
                 {
-                    switch (iallhand[i])
+                    switch (IntAllHand[i])
                     {
                         case 1:
-                            rockcount += 1;
+                            RockCount += 1;
                             break;
                         case 2:
-                            scissorscount += 1;
+                            ScissorsCount += 1;
                             break;
                         case 3:
-                            papercount += 1;
+                            PaperCount += 1;
                             break;
                     }
                 }
 
                 //場がすべての手・グーのみ・チョキのみ・パーのみの時にそれぞれ真を返すbool
-                bool all = (rockcount != 0 && scissorscount != 0 && papercount != 0); 
-                bool allrock = (scissorscount == 0 && papercount == 0); 
-                bool allscissors = (papercount == 0 && rockcount == 0); 
-                bool allpaper = (rockcount == 0 && scissorscount == 0); 
+                bool AllPattern = (RockCount != 0 && ScissorsCount != 0 && PaperCount != 0); 
+                bool AllRock = (ScissorsCount == 0 && PaperCount == 0); 
+                bool AllScissors = (PaperCount == 0 && RockCount == 0); 
+                bool AllPaper = (RockCount == 0 && ScissorsCount == 0); 
 
-                while (allpaper || allrock || allscissors || all) //↑のboolはすべてあいこになるパターン
+                while (AllPaper || AllRock || AllScissors || AllPattern) //↑のboolはすべてあいこになるパターン
                 {
                     Console.WriteLine("\n\n>>>あいこだぜ!!<<<");
                     Console.WriteLine("あいこが出たのでもう一度↓\n");
-                    //カウント初期化
-                    rockcount = 0;
-                    scissorscount = 0;
-                    papercount = 0;
+                    //じゃんけんカウント初期化
+                    RockCount = 0;
+                    ScissorsCount = 0;
+                    PaperCount = 0;
 
-                    for (int i = 0; i < friendNumber; i++)
+                    for (int i = 0; i < FriendNumber; i++)
                     {
                         Console.WriteLine("\n仲間" + (i + 1) + "の手を選択し、以下の数字で入力");
                         Console.WriteLine("1:グー　2:チョキ　3:パー");
-                        ifriend[i] = Getint(ref i); //プレイヤーの入力した数値を格納する変数
-                        sfriend[i] = convert(ifriend[i]); //数値をグー、チョキ、パーの文字列に変換
-                        iallhand[i] = ifriend[i];
-                        sallhand[i] = convert(ifriend[i]);
+                        IntFriend[i] = GetInt(ref i); //プレイヤーの入力した数値を格納する変数
+                        StrFriend[i] = Convert(IntFriend[i]); //数値をグー、チョキ、パーの文字列に変換
+                        IntAllHand[i] = IntFriend[i];
+                        StrAllHand[i] = Convert(IntFriend[i]);
                     }
-                    for (int i = 0; i < enemyNumber; i++)
+                    for (int i = 0; i < EnemyNumber; i++)
                     {
-                        ienemy[i] = enemyRandom.Next(1, 4); 
-                        senemy[i] = convert(ienemy[i]); 
-                        iallhand[i + friendNumber] = ienemy[i];
-                        sallhand[i + friendNumber] = convert(ienemy[i]);
+                        IntEnemy[i] = EnemyHand.Next(1, 4); 
+                        StrEnemy[i] = Convert(IntEnemy[i]); 
+                        IntAllHand[i + FriendNumber] = IntEnemy[i];
+                        StrAllHand[i + FriendNumber] = Convert(IntEnemy[i]);
                     }
 
                     Console.WriteLine("\n\n");
-                    for (int i = 0; i < iallhand.Length; i++)
+                    for (int i = 0; i < IntAllHand.Length; i++)
                     {
-                        switch (iallhand[i])
+                        switch (IntAllHand[i])
                         {
                             case 1:
-                                rockcount += 1;
+                                RockCount += 1;
                                 break;
                             case 2:
-                                scissorscount += 1;
+                                ScissorsCount += 1;
                                 break;
                             case 3:
-                                papercount += 1;
+                                PaperCount += 1;
                                 break;
                         }
                     }
 
                     //敵味方全員分の手を出力
-                    for (int i = 0; i < friendNumber; i++)
+                    for (int i = 0; i < FriendNumber; i++)
                     {
-                        Console.Write("\n仲間" + (i + 1) + ":" + sallhand[i] + " ");
+                        Console.Write("\n仲間" + (i + 1) + ":" + StrAllHand[i] + " ");
                     }
-                    for (int i = friendNumber; i < friendNumber + enemyNumber; i++)
+                    for (int i = FriendNumber; i < FriendNumber + EnemyNumber; i++)
                     {
-                        Console.Write("\n　敵" + (i - friendNumber + 1) + ":" + sallhand[i] + " ");
+                        Console.Write("\n　敵" + (i - FriendNumber + 1) + ":" + StrAllHand[i] + " ");
                     }
                     Console.WriteLine("\n");
-                    allpaper = (rockcount == 0 && scissorscount == 0);
-                    allrock = (scissorscount == 0 && papercount == 0);
-                    allscissors = (papercount == 0 && rockcount == 0);
-                    all = (rockcount != 0 && scissorscount != 0 && papercount != 0);
+                    AllPaper = (RockCount == 0 && ScissorsCount == 0);
+                    AllRock = (ScissorsCount == 0 && PaperCount == 0);
+                    AllScissors = (PaperCount == 0 && RockCount == 0);
+                    AllPattern = (RockCount != 0 && ScissorsCount != 0 && PaperCount != 0);
 
                 }
 
                 //パーがいないときにはグーが勝つ
-                if (papercount == 0)
+                if (PaperCount == 0)
                 {
                     Console.WriteLine("\n\n＞＞＞グーの勝ちだぜ！！＜＜＜");
                     Console.WriteLine("\n勝者\n");
-                    for (int i = 0; i < friendNumber; i++)
+                    for (int i = 0; i < FriendNumber; i++)
                     {
-                        if (ifriend[i] == 1)
+                        if (IntFriend[i] == 1)
                         {
-                            friendwincount[i] += 1;
+                            FriendWinCount[i] += 1;
                             Console.WriteLine("仲間" + (i + 1));
                         }
                         else
                         {
-                            friendlosecount[i] += 1;
+                            FriendLoseCount[i] += 1;
                         }
                     }
-                    for (int i = 0; i < enemyNumber; i++)
+                    for (int i = 0; i < EnemyNumber; i++)
                     {
-                        if (ienemy[i] == 1)
+                        if (IntEnemy[i] == 1)
                         {
-                            enemywincount[i] += 1;
+                            Enemywincount[i] += 1;
                             Console.WriteLine("　敵" + (i + 1));
                         }
                         else
                         {
-                            enemylosecount[i] += 1;
+                            EnemyLoseCount[i] += 1;
                         }
                     }
                     Console.WriteLine("\n--------------------------------------");
                 }
                 //グーが居ないときにはチョキが勝つ
-                else if (rockcount == 0)
+                else if (RockCount == 0)
                 {
                     Console.WriteLine("\n\n＞＞＞チョキの勝ちだぜ！！＜＜＜");
                     Console.WriteLine("\n勝者\n");
-                    for (int i = 0; i < friendNumber; i++)
+                    for (int i = 0; i < FriendNumber; i++)
                     {
-                        if (ifriend[i] == 2)
+                        if (IntFriend[i] == 2)
                         {
-                            friendwincount[i] += 1;
+                            FriendWinCount[i] += 1;
                             Console.WriteLine("仲間" + (i + 1));
                         }
                         else
                         {
-                            friendlosecount[i] += 1;
+                            FriendLoseCount[i] += 1;
                         }
                     }
-                    for (int i = 0; i < enemyNumber; i++)
+                    for (int i = 0; i < EnemyNumber; i++)
                     {
-                        if (ienemy[i] == 2)
+                        if (IntEnemy[i] == 2)
                         {
-                            enemywincount[i] += 1;
+                            Enemywincount[i] += 1;
                             Console.WriteLine("　敵" + (i + 1));
                         }
                         else
                         {
-                            enemylosecount[i] += 1;
+                            EnemyLoseCount[i] += 1;
                         }
                     }
                     Console.WriteLine("\n--------------------------------------");
@@ -255,28 +255,28 @@ namespace Zyanken_Taninzuu
                 {
                     Console.WriteLine("\n\n＞＞＞パーの勝ちだぜ！！＜＜＜");
                     Console.WriteLine("\n勝者\n");
-                    for (int i = 0; i < friendNumber; i++)
+                    for (int i = 0; i < FriendNumber; i++)
                     {
-                        if (ifriend[i] == 3)
+                        if (IntFriend[i] == 3)
                         {
-                            friendwincount[i] += 1;
+                            FriendWinCount[i] += 1;
                             Console.WriteLine("仲間" + (i + 1));
                         }
                         else
                         {
-                            friendlosecount[i] += 1;
+                            FriendLoseCount[i] += 1;
                         }
                     }
-                    for (int i = 0; i < enemyNumber; i++)
+                    for (int i = 0; i < EnemyNumber; i++)
                     {
-                        if (ienemy[i] == 3)
+                        if (IntEnemy[i] == 3)
                         {
-                            enemywincount[i] += 1;
+                            Enemywincount[i] += 1;
                             Console.WriteLine("　敵" + (i + 1));
                         }
                         else
                         {
-                            enemylosecount[i] += 1;
+                            EnemyLoseCount[i] += 1;
                         }
                     }
                     Console.WriteLine("\n--------------------------------------");
@@ -288,25 +288,25 @@ namespace Zyanken_Taninzuu
             {
                 Console.WriteLine("\n成績を見たいですか？");
                 Console.WriteLine("Y:見たい　　N：興味ないね");
-                string y_n = Console.ReadLine();
-                if (y_n == "y" || y_n == "Y" || y_n == "yes" || y_n == "YES")
+                string yn = Console.ReadLine();
+                if (yn == "y" || yn == "Y" || yn == "yes" || yn == "YES")
                 {
                     Console.WriteLine("「結果発表～～～～～～～～～～～～～～～～～～～～～～～」(cv.浜田雅功)\n");
-                    for (int i = 0; i < friendNumber; i++)
+                    for (int i = 0; i < FriendNumber; i++)
                     {
-                        friendwinpercent[i] = ((float)friendwincount[i] / (float)timesNumber) * 100;
-                        Console.Write("仲間" + (i + 1) + ":" + "勝ち:" + friendwincount[i] + "回" + ", " + "負け:" + friendlosecount[i] + "回" + ", " + "勝率:" + friendwinpercent[i].ToString("f2") + "%\n");
+                        FriendWinPercent[i] = ((float)FriendWinCount[i] / (float)TimesNumber) * 100;
+                        Console.Write("仲間" + (i + 1) + ":" + "勝ち:" + FriendWinCount[i] + "回" + ", " + "負け:" + FriendLoseCount[i] + "回" + ", " + "勝率:" + FriendWinPercent[i].ToString("f3") + "%\n");
                     }
-                    for (int i = 0; i < enemyNumber; i++)
+                    for (int i = 0; i < EnemyNumber; i++)
                     {
-                        enemywinpercent[i] = ((float)enemywincount[i] / (float)timesNumber) * 100;
-                        Console.Write("　敵" + (i + 1) + ":" + "勝ち:" + enemywincount[i] + "回" + ", " + "負け:" + enemylosecount[i] + "回" + ", " + "勝率:" + enemywinpercent[i].ToString("f2") + "%\n");
+                        EnemyWinPercent[i] = ((float)Enemywincount[i] / (float)TimesNumber) * 100;
+                        Console.Write("　敵" + (i + 1) + ":" + "勝ち:" + Enemywincount[i] + "回" + ", " + "負け:" + EnemyLoseCount[i] + "回" + ", " + "勝率:" + EnemyWinPercent[i].ToString("f3") + "%\n");
                     }
                     
                     Console.WriteLine("\n\nもう一度遊びますか？\n");
                     break;
                 }
-                else if (y_n == "n" || y_n == "N" || y_n == "no" || y_n == "NO")
+                else if (yn == "n" || yn == "N" || yn == "no" || yn == "NO")
                 {
                     Console.WriteLine("\n\nもう一度遊びますか？\n");
                     break;
@@ -317,51 +317,51 @@ namespace Zyanken_Taninzuu
                 }
             }
         }
-        static void Definition_input()
+        static void Definitioninput()
         {
             try
             {
                 Console.WriteLine("\n仲間の数を入力してください");
-                int friendNumber = int.Parse(Console.ReadLine()); //プレイヤーの数を入力
-                if (friendNumber < 0)
+                int FriendNumber = int.Parse(Console.ReadLine()); //プレイヤーの数を入力
+                if (FriendNumber < 0)
                 {
                     throw new InvalidOperationException();
                 }
                 Console.WriteLine("\n敵の数を入力してください（2人以上のみ）");
-                int enemyNumber = int.Parse(Console.ReadLine()); //CPUの数を入力
-                if (enemyNumber < 2)
+                int EnemyNumber = int.Parse(Console.ReadLine()); //CPUの数を入力
+                if (EnemyNumber < 2)
                 {
                     throw new InvalidOperationException();
                 }
                 Console.WriteLine("\n勝負回数を入力してください");
-                int timesNumber = int.Parse(Console.ReadLine()); //何回勝負にするか入力
-                if (timesNumber < 1)
+                int TimesNumber = int.Parse(Console.ReadLine()); //何回勝負にするか入力
+                if (TimesNumber < 1)
                 {
                     throw new InvalidOperationException();
                 }
                 Console.WriteLine("\n\n闇のゲームの始まりだ\n");
-                Array_Registration(ref friendNumber, enemyNumber, timesNumber);
+                ArrayRegistration(ref FriendNumber, EnemyNumber, TimesNumber);
             }
             catch (FormatException)
             {
                 Console.Write("\n適切な値を入力してください\n");
                 Console.Write("仲間人数の入力に戻ります\n");
-                Definition_input();
+                Definitioninput();
             }
             catch (OverflowException)
             {
                 Console.Write("\n適切な値を入力してください\n");
                 Console.Write("仲間人数の入力に戻ります\n");
-                Definition_input();
+                Definitioninput();
             }
             catch (InvalidOperationException)
             {
                 Console.Write("\n適切な値を入力してください\n");
                 Console.Write("仲間人数の入力に戻ります\n");
-                Definition_input();
+                Definitioninput();
             }
         }
-        static int Getint(ref int x)
+        static int GetInt(ref int x)
         {
             int i;
             while (true)
@@ -400,7 +400,7 @@ namespace Zyanken_Taninzuu
             }
             return i;
         }
-        static string convert(int num) //入力した１～３の値をジャンケンの文字に変換
+        static string Convert(int num) //入力した１～３の値をジャンケンの文字に変換
         {
             switch (num) 
             {
@@ -415,8 +415,11 @@ namespace Zyanken_Taninzuu
             }
         }
 
-        //文字列targetの右からlength文字取り出して抜き出すメソッド
-
+        /// 文字列からの部分文字列の抽出を右から行います
+        /// </summary>
+        /// <param name="target" />対象の文字列
+        /// <param name="length" />部分文字列の長さ
+        /// <returns>文字列の右から抽出された部分文字列</returns>
         static string SubstringRight(string target, int length)
         {
             return target.Substring(target.Length - length, length);
