@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +11,13 @@ namespace Zyanken_Taninzuu
 
         static void Main(string[] args)
         {
-            Console.WriteLine("‚¨‚¢A‰´‚½‚¿‚ÆƒWƒƒƒ“ƒPƒ“‚µ‚ë‚æB\n");
-            Console.WriteLine("ƒWƒƒƒ“ƒPƒ“‚µ‚Ä‚ ‚°‚Ü‚·‚©H");
+            Console.WriteLine("ãŠã„ã€ä¿ºãŸã¡ã¨ã‚¸ãƒ£ãƒ³ã‚±ãƒ³ã—ã‚ã‚ˆã€‚\n");
+            Console.WriteLine("ã‚¸ãƒ£ãƒ³ã‚±ãƒ³ã—ã¦ã‚ã’ã¾ã™ã‹ï¼Ÿ");
 
             while (true)
             {
-                Console.WriteLine("ƒWƒƒƒ“ƒPƒ“‚·‚éFY‚ğ“ü—Í");
-                Console.WriteLine("‚à‚¤‹A‚éFN‚ğ“ü—Í");
+                Console.WriteLine("ã‚¸ãƒ£ãƒ³ã‚±ãƒ³ã™ã‚‹ï¼šYã‚’å…¥åŠ›");
+                Console.WriteLine("ã‚‚ã†å¸°ã‚‹ï¼šNã‚’å…¥åŠ›");
 
                 string yn = Console.ReadLine();
 
@@ -27,66 +27,66 @@ namespace Zyanken_Taninzuu
                 }
                 else if (yn == "n" || yn == "N" || yn == "no" || yn == "NO")
                 {
-                    Console.WriteLine("\n‹A‚è‚½‚¢‚Ì‚ğ–³—‚Éˆø‚«—¯‚ß‚é‚Ì‚Í‹C‚ªˆø‚¯‚é‚©‚ç‹A‚Á‚Ä‚¢‚¢‚æ\n");
+                    Console.WriteLine("\nå¸°ã‚ŠãŸã„ã®ã‚’ç„¡ç†ã«å¼•ãç•™ã‚ã‚‹ã®ã¯æ°—ãŒå¼•ã‘ã‚‹ã‹ã‚‰å¸°ã£ã¦ã„ã„ã‚ˆ\n");
                     Environment.Exit(0);   
                 }
                 else
                 {
-                    Console.WriteLine("\nYES‚©NO‚©•·‚©‚ê‚½‚È‚çYES‚©NO‚Å“š‚¦‚ë‚æ\n");
+                    Console.WriteLine("\nYESã‹NOã‹èã‹ã‚ŒãŸãªã‚‰YESã‹NOã§ç­”ãˆã‚ã‚ˆ\n");
                 }
             }
         }
         static void ArrayRegistration(ref int FriendNumber, int EnemyNumber, int TimesNumber)
         {
-            //ŠeƒvƒŒƒCƒ„[‚Ìè‚ğŠi”[‚·‚é”z—ñB
+            //å„ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ‰‹ã‚’æ ¼ç´ã™ã‚‹é…åˆ—ã€‚
             int[] IntFriend = new int[FriendNumber];
             int[] IntEnemy = new int[EnemyNumber];
-            //N”Ô–Ú‚ÌƒvƒŒƒCƒ„[‚ªo‚µ‚½è‚ğƒO[Aƒ`ƒ‡ƒLAƒp[‚Æ‚µ‚Ä•¶š—ñ‚ÅŠi”[‚·‚é”z—ñB
+            //Nç•ªç›®ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå‡ºã—ãŸæ‰‹ã‚’ã‚°ãƒ¼ã€ãƒãƒ§ã‚­ã€ãƒ‘ãƒ¼ã¨ã—ã¦æ–‡å­—åˆ—ã§æ ¼ç´ã™ã‚‹é…åˆ—ã€‚
             string[] StrFriend = new string[FriendNumber];
             string[] StrEnemy = new string[EnemyNumber];
-            //ŠeƒvƒŒƒCƒ„[‚ÌŸ”s”‚ğŠi”[‚·‚é”z—ñB
+            //å„ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‹æ•—æ•°ã‚’æ ¼ç´ã™ã‚‹é…åˆ—ã€‚
             int[] FriendWinCount = new int[FriendNumber];
             int[] Enemywincount = new int[EnemyNumber];
             int[] FriendLoseCount = new int[FriendNumber];
             int[] EnemyLoseCount = new int[EnemyNumber];
-            //ŠeƒvƒŒƒCƒ„[‚ÌŸ—¦‚ğŠi”[‚·‚é”z—ñB
+            //å„ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‹ç‡ã‚’æ ¼ç´ã™ã‚‹é…åˆ—ã€‚
             float[] FriendWinPercent = new float[FriendNumber];
             float[] EnemyWinPercent = new float[EnemyNumber];
-            //ŠeƒvƒŒƒCƒ„[‚ÆCPU‚Ìo‚µ‚½è‚Ì”’l‚ğŠi”[‚·‚é”z—ñB
+            //å„ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨CPUã®å‡ºã—ãŸæ‰‹ã®æ•°å€¤ã‚’æ ¼ç´ã™ã‚‹é…åˆ—ã€‚
             int[] IntAllHand = new int[FriendNumber + EnemyNumber];
             string[] StrAllHand = new string[FriendNumber + EnemyNumber];
 
-            //TimesNumber‚Åw’è‚µ‚½Kaisu‚É‚È‚é‚Ü‚ÅƒWƒƒƒ“ƒPƒ“‚ğs‚¤
+            //TimesNumberã§æŒ‡å®šã—ãŸKaisuã«ãªã‚‹ã¾ã§ã‚¸ãƒ£ãƒ³ã‚±ãƒ³ã‚’è¡Œã†
             for (int Kaisu = 0; Kaisu < TimesNumber; Kaisu++)
             {
-                Console.WriteLine((Kaisu + 1) + "‰ñí\n");
-                for (int i = 0; i < FriendNumber; i++)      //’‡ŠÔ‘Sˆõ‚Ìè‚ª‘µ‚¤‚Ü‚Å‘I‘ğ
+                Console.WriteLine((Kaisu + 1) + "å›æˆ¦\n");
+                for (int i = 0; i < FriendNumber; i++)      //ä»²é–“å…¨å“¡ã®æ‰‹ãŒæƒã†ã¾ã§é¸æŠ
                 {
-                    Console.WriteLine("\n’‡ŠÔ" + (i + 1) + "‚Ìè‚ğ‘I‘ğ‚µAˆÈ‰º‚Ì”š‚Å“ü—Í");
-                    Console.WriteLine("1:ƒO[@2:ƒ`ƒ‡ƒL@3:ƒp[");
-                    IntFriend[i] = GetInt(ref i); //ƒvƒŒƒCƒ„[‚Ì“ü—Í‚µ‚½”’l‚ğŠi”[‚·‚é•Ï”
-                    StrFriend[i] = Convert(IntFriend[i]); //”’l‚ğƒO[Aƒ`ƒ‡ƒLAƒp[‚Ì•¶š—ñ‚É•ÏŠ·
+                    Console.WriteLine("\nä»²é–“" + (i + 1) + "ã®æ‰‹ã‚’é¸æŠã—ã€ä»¥ä¸‹ã®æ•°å­—ã§å…¥åŠ›");
+                    Console.WriteLine("1:ã‚°ãƒ¼ã€€2:ãƒãƒ§ã‚­ã€€3:ãƒ‘ãƒ¼");
+                    IntFriend[i] = GetInt(ref i); //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å…¥åŠ›ã—ãŸæ•°å€¤ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
+                    StrFriend[i] = Convert(IntFriend[i]); //æ•°å€¤ã‚’ã‚°ãƒ¼ã€ãƒãƒ§ã‚­ã€ãƒ‘ãƒ¼ã®æ–‡å­—åˆ—ã«å¤‰æ›
                     IntAllHand[i] = IntFriend[i];
                     StrAllHand[i] = Convert(IntFriend[i]);
                 }
                 Random EnemyHand = new System.Random();
                 for (int i = 0; i < EnemyNumber; i++)
                 {
-                    IntEnemy[i] = EnemyHand.Next(1, 4); //1`‚R‚Ì—”‚ğæ“¾‚µ“G‚Ìè‚Æ‚·‚éB
-                    StrEnemy[i] = Convert(IntEnemy[i]); //”’l‚ğƒO[Aƒ`ƒ‡ƒLAƒp[‚Ì•¶š—ñ‚É•ÏŠ·
+                    IntEnemy[i] = EnemyHand.Next(1, 4); //1ï½ï¼“ã®ä¹±æ•°ã‚’å–å¾—ã—æ•µã®æ‰‹ã¨ã™ã‚‹ã€‚
+                    StrEnemy[i] = Convert(IntEnemy[i]); //æ•°å€¤ã‚’ã‚°ãƒ¼ã€ãƒãƒ§ã‚­ã€ãƒ‘ãƒ¼ã®æ–‡å­—åˆ—ã«å¤‰æ›
                     IntAllHand[i + FriendNumber] = IntEnemy[i];
                     StrAllHand[i + FriendNumber] = Convert(IntEnemy[i]);
                 }
-                //‚»‚ê‚¼‚ê‚ÌƒvƒŒƒCƒ„[‚ªo‚µ‚½è‚ğ•\¦
+                //ãã‚Œãã‚Œã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå‡ºã—ãŸæ‰‹ã‚’è¡¨ç¤º
                 for (int i = 0; i < FriendNumber; i++)
                 {
-                    Console.Write("\n’‡ŠÔ" + (i + 1) + ":" + StrAllHand[i] + " ");
+                    Console.Write("\nä»²é–“" + (i + 1) + ":" + StrAllHand[i] + " ");
                 }
                 for (int i = FriendNumber; i < FriendNumber + EnemyNumber; i++)
                 {
-                    Console.Write("\n@“G" + (i - FriendNumber + 1) + ":" + StrAllHand[i] + " ");
+                    Console.Write("\nã€€æ•µ" + (i - FriendNumber + 1) + ":" + StrAllHand[i] + " ");
                 }
-                //‚»‚ê‚¼‚ê‚Ìè‚ğo‚µ‚½ƒvƒŒƒCƒ„[”‚ğƒJƒEƒ“ƒg
+                //ãã‚Œãã‚Œã®æ‰‹ã‚’å‡ºã—ãŸãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ•°ã‚’ã‚«ã‚¦ãƒ³ãƒˆ
                 int RockCount = 0;
                 int ScissorsCount = 0;
                 int PaperCount = 0;
@@ -105,27 +105,28 @@ namespace Zyanken_Taninzuu
                             break;
                     }
                 }
-                //ê‚ª‚·‚×‚Ä‚ÌèEƒO[‚Ì‚İEƒ`ƒ‡ƒL‚Ì‚İEƒp[‚Ì‚İ‚Ì‚É‚»‚ê‚¼‚ê^‚ğ•Ô‚·bool
+                //å ´ãŒã™ã¹ã¦ã®æ‰‹ãƒ»ã‚°ãƒ¼ã®ã¿ãƒ»ãƒãƒ§ã‚­ã®ã¿ãƒ»ãƒ‘ãƒ¼ã®ã¿ã®æ™‚ã«ãã‚Œãã‚ŒçœŸã‚’è¿”ã™bool
                 bool AllPattern = (RockCount != 0 && ScissorsCount != 0 && PaperCount != 0); 
                 bool AllRock = (ScissorsCount == 0 && PaperCount == 0); 
                 bool AllScissors = (PaperCount == 0 && RockCount == 0); 
                 bool AllPaper = (RockCount == 0 && ScissorsCount == 0); 
 
-                while (AllPaper || AllRock || AllScissors || AllPattern) //ª‚Ìbool‚Í‚·‚×‚Ä‚ ‚¢‚±‚É‚È‚éƒpƒ^[ƒ“
+                while (AllPaper || AllRock || AllScissors || AllPattern) //â†‘ã®boolã¯ã™ã¹ã¦ã‚ã„ã“ã«ãªã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³
                 {
-                    Console.WriteLine("\n\n>>>‚ ‚¢‚±‚¾‚º!!<<<");
-                    Console.WriteLine("‚ ‚¢‚±‚ªo‚½‚Ì‚Å‚à‚¤ˆê“x«\n");
-                    //‚¶‚á‚ñ‚¯‚ñƒJƒEƒ“ƒg‰Šú‰»
+                    Console.WriteLine("\n\n>>>ã‚ã„ã“ã ãœ!!<<<");
+                    Console.WriteLine("ã‚ã„ã“ãŒå‡ºãŸã®ã§ã‚‚ã†ä¸€åº¦â†“\n");
+
+                    //ã˜ã‚ƒã‚“ã‘ã‚“ã‚«ã‚¦ãƒ³ãƒˆåˆæœŸåŒ–
                     RockCount = 0;
                     ScissorsCount = 0;
                     PaperCount = 0;
 
                     for (int i = 0; i < FriendNumber; i++)
                     {
-                        Console.WriteLine("\n’‡ŠÔ" + (i + 1) + "‚Ìè‚ğ‘I‘ğ‚µAˆÈ‰º‚Ì”š‚Å“ü—Í");
-                        Console.WriteLine("1:ƒO[@2:ƒ`ƒ‡ƒL@3:ƒp[");
-                        IntFriend[i] = GetInt(ref i); //ƒvƒŒƒCƒ„[‚Ì“ü—Í‚µ‚½”’l‚ğŠi”[‚·‚é•Ï”
-                        StrFriend[i] = Convert(IntFriend[i]); //”’l‚ğƒO[Aƒ`ƒ‡ƒLAƒp[‚Ì•¶š—ñ‚É•ÏŠ·
+                        Console.WriteLine("\nä»²é–“" + (i + 1) + "ã®æ‰‹ã‚’é¸æŠã—ã€ä»¥ä¸‹ã®æ•°å­—ã§å…¥åŠ›");
+                        Console.WriteLine("1:ã‚°ãƒ¼ã€€2:ãƒãƒ§ã‚­ã€€3:ãƒ‘ãƒ¼");
+                        IntFriend[i] = GetInt(ref i); //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å…¥åŠ›ã—ãŸæ•°å€¤ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
+                        StrFriend[i] = Convert(IntFriend[i]); //æ•°å€¤ã‚’ã‚°ãƒ¼ã€ãƒãƒ§ã‚­ã€ãƒ‘ãƒ¼ã®æ–‡å­—åˆ—ã«å¤‰æ›
                         IntAllHand[i] = IntFriend[i];
                         StrAllHand[i] = Convert(IntFriend[i]);
                     }
@@ -152,14 +153,14 @@ namespace Zyanken_Taninzuu
                                 break;
                         }
                     }
-                    //“G–¡•û‘Sˆõ•ª‚Ìè‚ğo—Í
+                    //æ•µå‘³æ–¹å…¨å“¡åˆ†ã®æ‰‹ã‚’å‡ºåŠ›
                     for (int i = 0; i < FriendNumber; i++)
                     {
-                        Console.Write("\n’‡ŠÔ" + (i + 1) + ":" + StrAllHand[i] + " ");
+                        Console.Write("\nä»²é–“" + (i + 1) + ":" + StrAllHand[i] + " ");
                     }
                     for (int i = FriendNumber; i < FriendNumber + EnemyNumber; i++)
                     {
-                        Console.Write("\n@“G" + (i - FriendNumber + 1) + ":" + StrAllHand[i] + " ");
+                        Console.Write("\nã€€æ•µ" + (i - FriendNumber + 1) + ":" + StrAllHand[i] + " ");
                     }
                     Console.WriteLine("\n");
                     AllPaper = (RockCount == 0 && ScissorsCount == 0);
@@ -168,17 +169,17 @@ namespace Zyanken_Taninzuu
                     AllPattern = (RockCount != 0 && ScissorsCount != 0 && PaperCount != 0);
                 }
 
-                //ƒp[‚ª‚¢‚È‚¢‚Æ‚«‚É‚ÍƒO[‚ªŸ‚Â
+                //ãƒ‘ãƒ¼ãŒã„ãªã„ã¨ãã«ã¯ã‚°ãƒ¼ãŒå‹ã¤
                 if (PaperCount == 0)
                 {
-                    Console.WriteLine("\n\n„„„ƒO[‚ÌŸ‚¿‚¾‚ºIIƒƒƒ");
-                    Console.WriteLine("\nŸÒ\n");
+                    Console.WriteLine("\n\nï¼ï¼ï¼ã‚°ãƒ¼ã®å‹ã¡ã ãœï¼ï¼ï¼œï¼œï¼œ");
+                    Console.WriteLine("\nå‹è€…\n");
                     for (int i = 0; i < FriendNumber; i++)
                     {
                         if (IntFriend[i] == 1)
                         {
                             FriendWinCount[i] += 1;
-                            Console.WriteLine("’‡ŠÔ" + (i + 1));
+                            Console.WriteLine("ä»²é–“" + (i + 1));
                         }
                         else
                         {
@@ -190,7 +191,7 @@ namespace Zyanken_Taninzuu
                         if (IntEnemy[i] == 1)
                         {
                             Enemywincount[i] += 1;
-                            Console.WriteLine("@“G" + (i + 1));
+                            Console.WriteLine("ã€€æ•µ" + (i + 1));
                         }
                         else
                         {
@@ -199,17 +200,17 @@ namespace Zyanken_Taninzuu
                     }
                     Console.WriteLine("\n--------------------------------------");
                 }
-                //ƒO[‚ª‹‚È‚¢‚Æ‚«‚É‚Íƒ`ƒ‡ƒL‚ªŸ‚Â
+                //ã‚°ãƒ¼ãŒå±…ãªã„ã¨ãã«ã¯ãƒãƒ§ã‚­ãŒå‹ã¤
                 else if (RockCount == 0)
                 {
-                    Console.WriteLine("\n\n„„„ƒ`ƒ‡ƒL‚ÌŸ‚¿‚¾‚ºIIƒƒƒ");
-                    Console.WriteLine("\nŸÒ\n");
+                    Console.WriteLine("\n\nï¼ï¼ï¼ãƒãƒ§ã‚­ã®å‹ã¡ã ãœï¼ï¼ï¼œï¼œï¼œ");
+                    Console.WriteLine("\nå‹è€…\n");
                     for (int i = 0; i < FriendNumber; i++)
                     {
                         if (IntFriend[i] == 2)
                         {
                             FriendWinCount[i] += 1;
-                            Console.WriteLine("’‡ŠÔ" + (i + 1));
+                            Console.WriteLine("ä»²é–“" + (i + 1));
                         }
                         else
                         {
@@ -221,7 +222,7 @@ namespace Zyanken_Taninzuu
                         if (IntEnemy[i] == 2)
                         {
                             Enemywincount[i] += 1;
-                            Console.WriteLine("@“G" + (i + 1));
+                            Console.WriteLine("ã€€æ•µ" + (i + 1));
                         }
                         else
                         {
@@ -230,17 +231,17 @@ namespace Zyanken_Taninzuu
                     }
                     Console.WriteLine("\n--------------------------------------");
                 }
-                //ƒ`ƒ‡ƒL‚ª‹‚È‚¢ê‡‚É‚Íƒp[‚ªŸ‚Â
+                //ãƒãƒ§ã‚­ãŒå±…ãªã„å ´åˆã«ã¯ãƒ‘ãƒ¼ãŒå‹ã¤
                 else
                 {
-                    Console.WriteLine("\n\n„„„ƒp[‚ÌŸ‚¿‚¾‚ºIIƒƒƒ");
-                    Console.WriteLine("\nŸÒ\n");
+                    Console.WriteLine("\n\nï¼ï¼ï¼ãƒ‘ãƒ¼ã®å‹ã¡ã ãœï¼ï¼ï¼œï¼œï¼œ");
+                    Console.WriteLine("\nå‹è€…\n");
                     for (int i = 0; i < FriendNumber; i++)
                     {
                         if (IntFriend[i] == 3)
                         {
                             FriendWinCount[i] += 1;
-                            Console.WriteLine("’‡ŠÔ" + (i + 1));
+                            Console.WriteLine("ä»²é–“" + (i + 1));
                         }
                         else
                         {
@@ -252,7 +253,7 @@ namespace Zyanken_Taninzuu
                         if (IntEnemy[i] == 3)
                         {
                             Enemywincount[i] += 1;
-                            Console.WriteLine("@“G" + (i + 1));
+                            Console.WriteLine("ã€€æ•µ" + (i + 1));
                         }
                         else
                         {
@@ -262,37 +263,37 @@ namespace Zyanken_Taninzuu
                     Console.WriteLine("\n--------------------------------------");
                 }
             }
-            //Œ‹‰Ê”­•\
+            //çµæœç™ºè¡¨
             while (true)
             {
-                Console.WriteLine("\n¬Ñ‚ğŒ©‚½‚¢‚Å‚·‚©H");
-                Console.WriteLine("Y:Œ©‚½‚¢@@NF‹»–¡‚È‚¢‚Ë");
+                Console.WriteLine("\næˆç¸¾ã‚’è¦‹ãŸã„ã§ã™ã‹ï¼Ÿ");
+                Console.WriteLine("Y:è¦‹ãŸã„ã€€ã€€Nï¼šèˆˆå‘³ãªã„ã­");
                 string yn = Console.ReadLine();
                 if (yn == "y" || yn == "Y" || yn == "yes" || yn == "YES")
                 {
-                    Console.WriteLine("uŒ‹‰Ê”­•\```````````````````````v(cv.•l“c‰ëŒ÷)\n");
+                    Console.WriteLine("ã€Œçµæœç™ºè¡¨ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ã€(cv.æµœç”°é›…åŠŸ)\n");
                     for (int i = 0; i < FriendNumber; i++)
                     {
                         FriendWinPercent[i] = ((float)FriendWinCount[i] / (float)TimesNumber) * 100;
-                        Console.Write("’‡ŠÔ" + (i + 1) + ":" + "Ÿ‚¿:" + FriendWinCount[i] + "‰ñ" + ", " + "•‰‚¯:" + FriendLoseCount[i] + "‰ñ" + ", " + "Ÿ—¦:" + FriendWinPercent[i].ToString("f3") + "%\n");
+                        Console.Write("ä»²é–“" + (i + 1) + ":" + "å‹ã¡:" + FriendWinCount[i] + "å›" + ", " + "è² ã‘:" + FriendLoseCount[i] + "å›" + ", " + "å‹ç‡:" + FriendWinPercent[i].ToString("f3") + "%\n");
                     }
                     for (int i = 0; i < EnemyNumber; i++)
                     {
                         EnemyWinPercent[i] = ((float)Enemywincount[i] / (float)TimesNumber) * 100;
-                        Console.Write("@“G" + (i + 1) + ":" + "Ÿ‚¿:" + Enemywincount[i] + "‰ñ" + ", " + "•‰‚¯:" + EnemyLoseCount[i] + "‰ñ" + ", " + "Ÿ—¦:" + EnemyWinPercent[i].ToString("f3") + "%\n");
+                        Console.Write("ã€€æ•µ" + (i + 1) + ":" + "å‹ã¡:" + Enemywincount[i] + "å›" + ", " + "è² ã‘:" + EnemyLoseCount[i] + "å›" + ", " + "å‹ç‡:" + EnemyWinPercent[i].ToString("f3") + "%\n");
                     }
                     
-                    Console.WriteLine("\n\n‚à‚¤ˆê“x—V‚Ñ‚Ü‚·‚©H\n");
+                    Console.WriteLine("\n\nã‚‚ã†ä¸€åº¦éŠã³ã¾ã™ã‹ï¼Ÿ\n");
                     break;
                 }
                 else if (yn == "n" || yn == "N" || yn == "no" || yn == "NO")
                 {
-                    Console.WriteLine("\n\n‚à‚¤ˆê“x—V‚Ñ‚Ü‚·‚©H\n");
+                    Console.WriteLine("\n\nã‚‚ã†ä¸€åº¦éŠã³ã¾ã™ã‹ï¼Ÿ\n");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("\nYES‚©NO‚©•·‚©‚ê‚½‚È‚çYES‚©NO‚Å“š‚¦‚ë‚æ\n"); //“ü—Í‚ª“K³‚Å‚È‚¢ê‡“ü—Í‚É–ß‚é
+                    Console.WriteLine("\nYESã‹NOã‹èã‹ã‚ŒãŸãªã‚‰YESã‹NOã§ç­”ãˆã‚ã‚ˆ\n"); //å…¥åŠ›ãŒé©æ­£ã§ãªã„å ´åˆå…¥åŠ›ã«æˆ»ã‚‹
                 }
             }
         }
@@ -300,43 +301,43 @@ namespace Zyanken_Taninzuu
         {
             try
             {
-                Console.WriteLine("\n’‡ŠÔ‚Ì”‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
-                int FriendNumber = int.Parse(Console.ReadLine()); //ƒvƒŒƒCƒ„[‚Ì”‚ğ“ü—Í
+                Console.WriteLine("\nä»²é–“ã®æ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„");
+                int FriendNumber = int.Parse(Console.ReadLine()); //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ•°ã‚’å…¥åŠ›
                 if (FriendNumber < 0)
                 {
                     throw new InvalidOperationException();
                 }
-                Console.WriteLine("\n“G‚Ì”‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢i2lˆÈã‚Ì‚İj");
-                int EnemyNumber = int.Parse(Console.ReadLine()); //CPU‚Ì”‚ğ“ü—Í
+                Console.WriteLine("\næ•µã®æ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼ˆ2äººä»¥ä¸Šã®ã¿ï¼‰");
+                int EnemyNumber = int.Parse(Console.ReadLine()); //CPUã®æ•°ã‚’å…¥åŠ›
                 if (EnemyNumber < 2)
                 {
                     throw new InvalidOperationException();
                 }
-                Console.WriteLine("\nŸ•‰‰ñ”‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
-                int TimesNumber = int.Parse(Console.ReadLine()); //‰½‰ñŸ•‰‚É‚·‚é‚©“ü—Í
+                Console.WriteLine("\nå‹è² å›æ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„");
+                int TimesNumber = int.Parse(Console.ReadLine()); //ä½•å›å‹è² ã«ã™ã‚‹ã‹å…¥åŠ›
                 if (TimesNumber < 1)
                 {
                     throw new InvalidOperationException();
                 }
-                Console.WriteLine("\n\nˆÅ‚ÌƒQ[ƒ€‚Ìn‚Ü‚è‚¾\n");
+                Console.WriteLine("\n\né—‡ã®ã‚²ãƒ¼ãƒ ã®å§‹ã¾ã‚Šã \n");
                 ArrayRegistration(ref FriendNumber, EnemyNumber, TimesNumber);
             }
             catch (FormatException)
             {
-                Console.Write("\n“KØ‚È’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-                Console.Write("’‡ŠÔl”‚Ì“ü—Í‚É–ß‚è‚Ü‚·\n");
+                Console.Write("\né©åˆ‡ãªå€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n");
+                Console.Write("ä»²é–“äººæ•°ã®å…¥åŠ›ã«æˆ»ã‚Šã¾ã™\n");
                 DefinitionInput();
             }
             catch (OverflowException)
             {
-                Console.Write("\n“KØ‚È’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-                Console.Write("’‡ŠÔl”‚Ì“ü—Í‚É–ß‚è‚Ü‚·\n");
+                Console.Write("\né©åˆ‡ãªå€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n");
+                Console.Write("ä»²é–“äººæ•°ã®å…¥åŠ›ã«æˆ»ã‚Šã¾ã™\n");
                 DefinitionInput();
             }
             catch (InvalidOperationException)
             {
-                Console.Write("\n“KØ‚È’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-                Console.Write("’‡ŠÔl”‚Ì“ü—Í‚É–ß‚è‚Ü‚·\n");
+                Console.Write("\né©åˆ‡ãªå€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n");
+                Console.Write("ä»²é–“äººæ•°ã®å…¥åŠ›ã«æˆ»ã‚Šã¾ã™\n");
                 DefinitionInput();
             }
         }
@@ -359,45 +360,45 @@ namespace Zyanken_Taninzuu
                 }
                 catch (FormatException)
                 {
-                    Console.Write("\n³‚µ‚¢’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-                    Console.WriteLine("1:ƒO[@2:ƒ`ƒ‡ƒL@3:ƒp[");
+                    Console.Write("\næ­£ã—ã„å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n");
+                    Console.WriteLine("1:ã‚°ãƒ¼ã€€2:ãƒãƒ§ã‚­ã€€3:ãƒ‘ãƒ¼");
                     continue ;
                 }
                 catch (OverflowException)
                 {
-                    Console.Write("\n³‚µ‚¢’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-                    Console.WriteLine("1:ƒO[@2:ƒ`ƒ‡ƒL@3:ƒp[");
+                    Console.Write("\næ­£ã—ã„å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n");
+                    Console.WriteLine("1:ã‚°ãƒ¼ã€€2:ãƒãƒ§ã‚­ã€€3:ãƒ‘ãƒ¼");
                     continue ;
                 }
                 catch (InvalidOperationException)
                 {
-                    Console.Write("\n³‚µ‚¢’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-                    Console.WriteLine("1:ƒO[@2:ƒ`ƒ‡ƒL@3:ƒp[");
+                    Console.Write("\næ­£ã—ã„å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n");
+                    Console.WriteLine("1:ã‚°ãƒ¼ã€€2:ãƒãƒ§ã‚­ã€€3:ãƒ‘ãƒ¼");
                     continue;
                 }
                 break;
             }
             return i;
         }
-        static string Convert(int num) //“ü—Í‚µ‚½‚P`‚R‚Ì’l‚ğƒWƒƒƒ“ƒPƒ“‚Ì•¶š‚É•ÏŠ·
+        static string Convert(int num) //å…¥åŠ›ã—ãŸï¼‘ï½ï¼“ã®å€¤ã‚’ã‚¸ãƒ£ãƒ³ã‚±ãƒ³ã®æ–‡å­—ã«å¤‰æ›
         {
             switch (num) 
             {
                 case 1:
-                    return "ƒO[";
+                    return "ã‚°ãƒ¼";
                 case 2:
-                    return "ƒ`ƒ‡ƒL";
+                    return "ãƒãƒ§ã‚­";
                 case 3:
-                    return "ƒp[";
+                    return "ãƒ‘ãƒ¼";
                 default:
                     return "";
             }
         }
-        /*•¶š—ñ‚©‚ç‚Ì•”•ª•¶š—ñ‚Ì’Šo‚ğ‰E‚©‚çs‚¢‚Ü‚·
+        /*æ–‡å­—åˆ—ã‹ã‚‰ã®éƒ¨åˆ†æ–‡å­—åˆ—ã®æŠ½å‡ºã‚’å³ã‹ã‚‰è¡Œã„ã¾ã™
            </summary>
-           <param name="target" />‘ÎÛ‚Ì•¶š—ñ
-           <param name="length" />•”•ª•¶š—ñ‚Ì’·‚³
-           <returns>•¶š—ñ‚Ì‰E‚©‚ç’Šo‚³‚ê‚½•”•ª•¶š—ñ</returns> */
+           <param name="target" />å¯¾è±¡ã®æ–‡å­—åˆ—
+           <param name="length" />éƒ¨åˆ†æ–‡å­—åˆ—ã®é•·ã•
+           <returns>æ–‡å­—åˆ—ã®å³ã‹ã‚‰æŠ½å‡ºã•ã‚ŒãŸéƒ¨åˆ†æ–‡å­—åˆ—</returns> */
         static string SubstringRight(string target, int length)
         {
             return target.Substring(target.Length - length, length);
