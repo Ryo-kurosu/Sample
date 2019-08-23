@@ -1,7 +1,0 @@
-C:\Users\ryo.kurosu\source\repos\Zyanken_Hukusuunin\Zyanken_Hukusuunin\bin\Debug\Zyanken_Hukusuunin.exe.config
-C:\Users\ryo.kurosu\source\repos\Zyanken_Hukusuunin\Zyanken_Hukusuunin\bin\Debug\Zyanken_Hukusuunin.exe
-C:\Users\ryo.kurosu\source\repos\Zyanken_Hukusuunin\Zyanken_Hukusuunin\bin\Debug\Zyanken_Hukusuunin.pdb
-C:\Users\ryo.kurosu\source\repos\Zyanken_Hukusuunin\Zyanken_Hukusuunin\obj\Debug\Zyanken_Hukusuunin.csprojAssemblyReference.cache
-C:\Users\ryo.kurosu\source\repos\Zyanken_Hukusuunin\Zyanken_Hukusuunin\obj\Debug\Zyanken_Hukusuunin.csproj.CoreCompileInputs.cache
-C:\Users\ryo.kurosu\source\repos\Zyanken_Hukusuunin\Zyanken_Hukusuunin\obj\Debug\Zyanken_Hukusuunin.exe
-C:\Users\ryo.kurosu\source\repos\Zyanken_Hukusuunin\Zyanken_Hukusuunin\obj\Debug\Zyanken_Hukusuunin.pdb
