@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // 制御されます。アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更します。
-[assembly: AssemblyTitle("Zyanken_Hukusuunin")]
+[assembly: AssemblyTitle("zyanken_3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Zyanken_Hukusuunin")]
+[assembly: AssemblyProduct("zyanken_3")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // このプロジェクトが COM に公開される場合、次の GUID が typelib の ID になります
-[assembly: Guid("128acb9c-41cc-4edd-81d7-c0f1edfadab8")]
+[assembly: Guid("c2c830b5-4d6a-4404-8ffb-11607dab27db")]
 
 // アセンブリのバージョン情報は次の 4 つの値で構成されています:
 //

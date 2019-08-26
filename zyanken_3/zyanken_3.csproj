@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{128ACB9C-41CC-4EDD-81D7-C0F1EDFADAB8}</ProjectGuid>
+    <ProjectGuid>{C2C830B5-4D6A-4404-8FFB-11607DAB27DB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Zyanken_Hukusuunin</RootNamespace>
-    <AssemblyName>Zyanken_Hukusuunin</AssemblyName>
+    <RootNamespace>zyanken_3</RootNamespace>
+    <AssemblyName>zyanken_3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
